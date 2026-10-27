@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostelbird - Premium Hostels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for modern icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- Responsive Header Navigation (Fixing Bug #2) -->
+    <header class="header">
+        <div class="logo">Hostelbird</div>
+        
+        <div class="header-actions">
+            <button id="profileBtn" class="icon-btn" aria-label="User Profile">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+            <button id="menuBtn" class="icon-btn mobile-only" aria-label="Menu">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div id="profileDropdown" class="dropdown hidden">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+            <a href="#">My Bookings</a>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileDrawer" class="drawer hidden">
+            <button id="closeMenuBtn" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+            <nav class="drawer-nav">
+                <a href="#">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">Events</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+        <div id="drawerOverlay" class="overlay hidden"></div>
+    </header>
+
+    <!-- Hero Section with Interactive Search (Fixing Bug #3) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Next Adventure</h1>
+            <p>Book the best hostels, co-living spaces, and experiences across India.</p>
+
+            <div class="search-bar">
+                <div class="search-field">
+                    <label>Where are you going?</label>
+                    <input type="text" placeholder="e.g. Goa, Rishikesh">
+                </div>
+                
+                <div class="search-field interactive" id="travellersBtn">
+                    <label>Travellers</label>
+                    <div class="traveller-display">1 Adult, 0 Children</div>
+                    
+                    <!-- Travellers Dropdown -->
+                    <div id="travellersDropdown" class="dropdown hidden">
+                        <div class="counter-row">
+                            <span>Adults</span>
+                            <div class="counter">
+                                <button class="counter-btn" id="decAdult">-</button>
+                                <span id="adultCount">1</span>
+                                <button class="counter-btn" id="incAdult">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-row">
+                            <span>Children</span>
+                            <div class="counter">
+                                <button class="counter-btn" id="decChild">-</button>
+                                <span id="childCount">0</span>
+                                <button class="counter-btn" id="incChild">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="primary-btn" id="letsGoBtn">Let's Go!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Navigation to Property Page -->
+    <section class="quick-links">
+        <h2>Try the Booking Flow</h2>
+        <a href="booking.html" class="property-card">
+            <div class="property-img bg-goa"></div>
+            <div class="property-info">
+                <h3>The Social Stays Goa</h3>
+                <p>Starting from ₹499/night</p>
+                <button class="secondary-btn">View Rooms</button>
+            </div>
+        </a>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

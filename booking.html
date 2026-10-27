@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Social Stays Goa - Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-gray">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Hostelbird</a></div>
+    </header>
+
+    <div class="booking-container">
+        <!-- Room Selection (Fixing Bug #1) -->
+        <main class="rooms-section">
+            <h2>Select Your Room</h2>
+            
+            <div class="room-card">
+                <div class="room-info">
+                    <h3>8 Bed Mixed Dorm</h3>
+                    <p class="price">₹499 / night</p>
+                </div>
+                <div class="room-action">
+                    <button class="primary-btn select-room-btn" data-id="dorm8" data-name="8 Bed Mixed Dorm" data-price="499">Select</button>
+                    <!-- Quantity controls will appear here once selected -->
+                    <div class="quantity-controls hidden" id="qty-dorm8">
+                        <button class="counter-btn remove-room" data-id="dorm8">-</button>
+                        <span class="room-qty">1</span>
+                        <button class="counter-btn add-room" data-id="dorm8">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-info">
+                    <h3>Private Double Room</h3>
+                    <p class="price">₹1499 / night</p>
+                </div>
+                <div class="room-action">
+                    <button class="primary-btn select-room-btn" data-id="private1" data-name="Private Double Room" data-price="1499">Select</button>
+                    <div class="quantity-controls hidden" id="qty-private1">
+                        <button class="counter-btn remove-room" data-id="private1">-</button>
+                        <span class="room-qty">1</span>
+                        <button class="counter-btn add-room" data-id="private1">+</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Dynamic Booking Summary -->
+        <aside class="booking-summary">
+            <h3>Booking Summary</h3>
+            <div id="emptySummary" class="empty-state">
+                <p>Select a room to continue.</p>
+            </div>
+            
+            <div id="activeSummary" class="active-state hidden">
+                <ul id="selectedRoomsList" class="selected-rooms">
+                    <!-- Injected via JS -->
+                </ul>
+                <div class="total-row">
+                    <span>Total Amount</span>
+                    <span id="totalPrice">₹0</span>
+                </div>
+                <button class="primary-btn w-full checkout-btn" onclick="alert('Proceeding to checkout with dynamic data!')">Proceed to Checkout</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">Room added to your summary!</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
